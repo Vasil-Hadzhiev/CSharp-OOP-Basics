@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace _05.StackOfStrings
+public class StartUp
 {
-    class StartUp
+    static void Main()
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }
+
