@@ -10,7 +10,7 @@ public class PerformanceCar : Car
         : base(brand, model, yearOfProduction, horsepower, acceleration, suspension, durability)
     {
         this.Horsepower += (this.Horsepower * 50 / 100);
-        this.Suspension += (this.Suspension * 25 / 100);
+        this.Suspension -= (this.Suspension * 25 / 100);
         this.addOns = new List<string>();
     }
 
@@ -24,16 +24,16 @@ public class PerformanceCar : Car
     {
         var sb = new StringBuilder(base.ToString());
 
-        if (this.addOns.Any())
+        if (this.addOns.Count > 0)
         {
-            sb.AppendLine($"Add-ons: {string.Join(", ", this.addOns)}");
+            sb.AppendLine("Add-ons: " + string.Join(", ", addOns));
         }
         else
         {
             sb.AppendLine("Add-ons: None");
         }
 
-        return sb.ToString();
+        return sb.ToString().Trim();
     }
 }
 

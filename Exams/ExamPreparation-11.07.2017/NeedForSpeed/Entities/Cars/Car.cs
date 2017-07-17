@@ -46,8 +46,8 @@ public abstract class Car
 
     public virtual void Tune(int tuneIndex, string tuneAddOn)
     {
-        this.horsepower += tuneIndex;
-        this.suspension += (tuneIndex / 2);
+        this.Horsepower += tuneIndex;
+        this.Suspension += (tuneIndex * 50 / 100);
     }
 
     public override string ToString()

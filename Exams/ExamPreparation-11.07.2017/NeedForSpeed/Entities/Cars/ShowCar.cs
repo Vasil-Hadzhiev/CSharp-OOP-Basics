@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 public class ShowCar : Car
 {
@@ -18,7 +19,11 @@ public class ShowCar : Car
 
     public override string ToString()
     {
-        return base.ToString() + Environment.NewLine + $"{this.stars} *";
+        var sb = new StringBuilder(base.ToString());
+
+        sb.AppendLine($"{stars} *");
+
+        return sb.ToString().Trim();
     }
 }
 
