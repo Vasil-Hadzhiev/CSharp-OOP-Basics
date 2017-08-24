@@ -1,24 +1,26 @@
-﻿public class Tire
+﻿namespace _08.RawData
 {
-    private double pressure;
-    private int age;
-
-    public Tire(double pressure, int age)
+    public class Tire
     {
-        this.Pressure = pressure;
-        this.Age = age;
-    }
+        private double pressure;
+        private int age;
 
-    public double Pressure
-    {
-        get { return this.pressure; }
-        set { this.pressure = value; }
-    }
+        public Tire(double pressure, int age)
+        {
+            this.Pressure = pressure;
+            this.Age = age;
+        }
 
-    public int Age
-    {
-        get { return this.age; }
-        set { this.age = value; }
+        public double Pressure
+        {
+            get { return this.pressure; }
+            private set { this.pressure = value; }
+        }
+
+        public int Age
+        {
+            get { return this.age; }
+            private set { this.age = value; }
+        }
     }
 }
-

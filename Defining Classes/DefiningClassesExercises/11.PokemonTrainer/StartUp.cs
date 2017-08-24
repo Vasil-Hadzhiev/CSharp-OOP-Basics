@@ -1,87 +1,88 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-public class StartUp
+﻿namespace _11.PokemonTrainer
 {
-    public static void Main()
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    public class StartUp
     {
-        var trainers = new List<Trainer>();
-
-        while (true)
+        public static void Main()
         {
-            var inputLine = Console.ReadLine();
+            var trainers = new List<Trainer>();
 
-            if (inputLine == "Tournament")
+            while (true)
             {
-                break;
-            }
+                var inputLine = Console.ReadLine();
 
-            var tokens = inputLine.
-                Split(new char[] { ' ' },
-                StringSplitOptions.RemoveEmptyEntries).
-                ToArray();
-
-            var trainerName = tokens[0];
-            var pokemonName = tokens[1];
-            var pokemonElement = tokens[2];
-            var pokemonHealth = int.Parse(tokens[3]);
-
-            var pokemon = new Pokemon(pokemonName, pokemonElement, pokemonHealth);
-
-            if (trainers.Any(t => t.Name == trainerName))
-            {
-                trainers.FirstOrDefault(t => t.Name == trainerName).Pokemons.Add(pokemon);
-            }
-            else
-            {
-                var trainer = new Trainer(trainerName);
-                trainer.Pokemons.Add(pokemon);
-                trainers.Add(trainer);
-            }
-        }
-
-        while (true)
-        {
-            var element = Console.ReadLine();
-
-            if (element == "End")
-            {
-                break;
-            }
-
-            foreach (var trainer in trainers)
-            {
-                if (trainer.Pokemons.Any(p => p.Element == element))
+                if (inputLine == "Tournament")
                 {
-                    trainer.Badges++;
+                    break;
+                }
+
+                var tokens = inputLine
+                    .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                    .ToArray();
+
+                var trainerName = tokens[0];
+                var pokemonName = tokens[1];
+                var pokemonElement = tokens[2];
+                var pokemonHealth = int.Parse(tokens[3]);
+
+                var pokemon = new Pokemon(pokemonName, pokemonElement, pokemonHealth);
+
+                if (trainers.Any(t => t.Name == trainerName))
+                {
+                    trainers.FirstOrDefault(t => t.Name == trainerName).Pokemons.Add(pokemon);
                 }
                 else
                 {
-                    foreach (var pokemon in trainer.Pokemons)
-                    {
-                        pokemon.Health -= 10;
-                    }
+                    var trainer = new Trainer(trainerName);
+                    trainer.Pokemons.Add(pokemon);
+                    trainers.Add(trainer);
+                }
+            }
+
+            while (true)
+            {
+                var element = Console.ReadLine();
+
+                if (element == "End")
+                {
+                    break;
                 }
 
-                for (int i = 0; i < trainer.Pokemons.Count; i++)
+                foreach (var trainer in trainers)
                 {
-                    if (trainer.Pokemons[i].Health <= 0)
+                    if (trainer.Pokemons.Any(p => p.Element == element))
                     {
-                        trainer.Pokemons.RemoveAt(i);
+                        trainer.Badges++;
+                    }
+                    else
+                    {
+                        foreach (var pokemon in trainer.Pokemons)
+                        {
+                            pokemon.Health -= 10;
+                        }
+                    }
+
+                    for (int i = 0; i < trainer.Pokemons.Count; i++)
+                    {
+                        if (trainer.Pokemons[i].Health <= 0)
+                        {
+                            trainer.Pokemons.RemoveAt(i);
+                        }
                     }
                 }
             }
-        }
 
-        trainers = trainers.
-            OrderByDescending(t => t.Badges).
-            ToList();
+            trainers = trainers
+                .OrderByDescending(t => t.Badges)
+                .ToList();
 
-        foreach (var trainer in trainers)
-        {
-            Console.WriteLine($"{trainer.Name} {trainer.Badges} {trainer.Pokemons.Count}");
+            foreach (var trainer in trainers)
+            {
+                Console.WriteLine($"{trainer.Name} {trainer.Badges} {trainer.Pokemons.Count}");
+            }
         }
     }
 }
-

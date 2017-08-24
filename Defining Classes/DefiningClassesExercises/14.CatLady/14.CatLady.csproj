@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AAB1A1AA-CD20-48EA-A18B-CCF686524FCF}</ProjectGuid>
+    <ProjectGuid>{C51BCFC0-9C28-4C35-B1CD-B145B1FAAD2C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_12.Google</RootNamespace>
-    <AssemblyName>12.Google</AssemblyName>
+    <RootNamespace>_14.CatLady</RootNamespace>
+    <AssemblyName>14.CatLady</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,14 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Car.cs" />
-    <Compile Include="Models\Child.cs" />
-    <Compile Include="Models\Company.cs" />
-    <Compile Include="Models\Parent.cs" />
-    <Compile Include="Models\Person.cs" />
-    <Compile Include="Models\Pokemon.cs" />
+    <Compile Include="Models\Cat.cs" />
+    <Compile Include="Models\Cymric.cs" />
+    <Compile Include="Models\Siamese.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\StreetExtraordinaire.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

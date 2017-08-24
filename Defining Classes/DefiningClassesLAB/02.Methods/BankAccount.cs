@@ -1,33 +1,35 @@
-﻿class BankAccount
+﻿namespace _02.Methods
 {
-    private int id;
-    private double balance;
-
-    public int ID
+    public class BankAccount
     {
-        get { return this.id; }
-        set { this.id = value; }
-    }
+        private int id;
+        private double balance;
 
-    public double Balance
-    {
-        get { return this.balance; }
-        set { this.balance = value; }
-    }
+        public int ID
+        {
+            get { return this.id; }
+            set { this.id = value; }
+        }
 
-    public void Deposit(double amount)
-    {
-        this.balance += amount;
-    }
+        public double Balance
+        {
+            get { return this.balance; }
+            set { this.balance = value; }
+        }
 
-    public void Withdraw(double amount)
-    {
-        this.balance -= amount;
-    }
+        public void Deposit(double amount)
+        {
+            this.balance += amount;
+        }
 
-    public override string ToString()
-    {
-        return $"Account {this.id}, balance {this.balance}";
+        public void Withdraw(double amount)
+        {
+            this.balance -= amount;
+        }
+
+        public override string ToString()
+        {
+            return $"Account {this.id}, balance {this.balance}";
+        }
     }
 }
-

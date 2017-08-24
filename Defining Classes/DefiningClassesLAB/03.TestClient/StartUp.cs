@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _03.TestClient
+﻿namespace _03.TestClient
 {
+    using System;
+    using System.Collections.Generic;
+
     public class StartUp
     {
         public static void Main()

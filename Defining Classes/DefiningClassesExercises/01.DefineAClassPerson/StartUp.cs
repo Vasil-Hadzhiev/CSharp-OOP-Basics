@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _01.DefineAClassPerson
+﻿namespace _01.DefineAClassPerson
 {
+    using System;
+    using System.Reflection;
+
     public class StartUp
     {
         public static void Main()
         {
-            Type personType = typeof(Person);
-            FieldInfo[] fields = personType.GetFields(BindingFlags.Public | BindingFlags.Instance);
+            var personType = typeof(Person);
+            var fields = personType.GetFields(BindingFlags.Public | BindingFlags.Instance);
             Console.WriteLine(fields.Length);
         }
     }

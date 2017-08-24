@@ -1,24 +1,26 @@
-﻿public class Engine
+﻿namespace _08.RawData
 {
-    private int speed;
-    private int power;
-
-    public Engine(int speed, int power)
+    public class Engine
     {
-        this.Speed = speed;
-        this.Power = power;
-    }
+        private int speed;
+        private int power;
 
-    public int Speed
-    {
-        get { return this.speed; }
-        set { this.speed = value; }
-    }
+        public Engine(int speed, int power)
+        {
+            this.Speed = speed;
+            this.Power = power;
+        }
 
-    public int Power
-    {
-        get { return this.power; }
-        set { this.power = value; }
+        public int Speed
+        {
+            get { return this.speed; }
+            private set { this.speed = value; }
+        }
+
+        public int Power
+        {
+            get { return this.power; }
+            private set { this.power = value; }
+        }
     }
 }
-

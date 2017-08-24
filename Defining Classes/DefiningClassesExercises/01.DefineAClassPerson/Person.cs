@@ -1,6 +1,9 @@
-﻿public class Person
+﻿namespace _01.DefineAClassPerson
 {
-    public string name;
-    public int age;
-}
+    public class Person
+    {
+        public string Name { get; }
 
+        public int Age { get; }
+    }
+}

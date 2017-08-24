@@ -1,92 +1,93 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-public class StartUp
+﻿namespace _04.DefinePersonClass
 {
-    public static void Main()
+    using System;
+    using System.Collections.Generic;
+
+    public class StartUp
     {
-        var accounts = new Dictionary<int, BankAccount>();
-
-        while (true)
+        public static void Main()
         {
-            var inputLine = Console.ReadLine();
+            var accounts = new Dictionary<int, BankAccount>();
 
-            if (inputLine == "End")
+            while (true)
             {
-                break;
+                var inputLine = Console.ReadLine();
+
+                if (inputLine == "End")
+                {
+                    break;
+                }
+
+                var tokens = inputLine.Split();
+                var command = tokens[0];
+
+                switch (command)
+                {
+                    case "Create":
+                        Create(tokens, accounts);
+                        break;
+                    case "Deposit":
+                        Deposit(tokens, accounts);
+                        break;
+                    case "Withdraw":
+                        Withdraw(tokens, accounts);
+                        break;
+                    case "Print":
+                        Print(tokens, accounts);
+                        break;
+                }
             }
+        }
 
-            var tokens = inputLine.Split();
-            var command = tokens[0];
+        private static void Create(string[] tokens, Dictionary<int, BankAccount> accounts)
+        {
+            var id = int.Parse(tokens[1]);
 
-            switch (command)
+            if (!accounts.ContainsKey(id))
             {
-                case "Create":
-                    Create(tokens, accounts);
-                    break;
-                case "Deposit":
-                    Deposit(tokens, accounts);
-                    break;
-                case "Withdraw":
-                    Withdraw(tokens, accounts);
-                    break;
-                case "Print":
-                    Print(tokens, accounts);
-                    break;
+                accounts[id] = new BankAccount(id);
+            }
+            else
+            {
+                Console.WriteLine("Account already exists");
             }
         }
-    }
 
-    private static void Create(string[] tokens, Dictionary<int, BankAccount> accounts)
-    {
-        var id = int.Parse(tokens[1]);
-
-        if (!accounts.ContainsKey(id))
+        private static void Deposit(string[] tokens, Dictionary<int, BankAccount> accounts)
         {
-            accounts[id] = new BankAccount(id);
+            var id = int.Parse(tokens[1]);
+            var amount = double.Parse(tokens[2]);
+
+            if (!accounts.ContainsKey(id))
+            {
+                Console.WriteLine("Account does not exist");
+            }
+            else
+            {
+                accounts[id].Deposit(amount);
+            }
         }
-        else
+
+        private static void Withdraw(string[] tokens, Dictionary<int, BankAccount> accounts)
         {
-            Console.WriteLine("Account already exists");
+            var id = int.Parse(tokens[1]);
+            var amount = double.Parse(tokens[2]);
+
+            if (!accounts.ContainsKey(id))
+            {
+                Console.WriteLine("Account does not exist");
+            }
+            else
+            {
+                accounts[id].Withdraw(amount);
+            }
         }
-    }
 
-    private static void Deposit(string[] tokens, Dictionary<int, BankAccount> accounts)
-    {
-        var id = int.Parse(tokens[1]);
-        var amount = double.Parse(tokens[2]);
-
-        if (!accounts.ContainsKey(id))
+        private static void Print(string[] tokens, Dictionary<int, BankAccount> accounts)
         {
-            Console.WriteLine("Account does not exist");
-        }
-        else
-        {
-            accounts[id].Deposit(amount);
-        }
-    }
+            var id = int.Parse(tokens[1]);
 
-    private static void Withdraw(string[] tokens, Dictionary<int, BankAccount> accounts)
-    {
-        var id = int.Parse(tokens[1]);
-        var amount = double.Parse(tokens[2]);
-
-        if (!accounts.ContainsKey(id))
-        {
-            Console.WriteLine("Account does not exist");
+            Console.WriteLine(accounts[id].ToString());
         }
-        else
-        {
-            accounts[id].Withdraw(amount);
-        }
-    }
-
-    private static void Print(string[] tokens, Dictionary<int, BankAccount> accounts)
-    {
-        var id = int.Parse(tokens[1]);
-
-        Console.WriteLine(accounts[id].ToString());
     }
 }
-

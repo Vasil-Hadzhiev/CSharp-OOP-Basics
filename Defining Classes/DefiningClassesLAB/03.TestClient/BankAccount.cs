@@ -1,41 +1,42 @@
-﻿using System.Collections.Generic;
-
-public class BankAccount
+﻿namespace _03.TestClient
 {
-    private int id;
-    private double balance;
-
-    public int ID
+    public class BankAccount
     {
-        get { return this.id; }
-        set { this.id = value; }
-    }
+        private int id;
+        private double balance;
 
-    public double Balance
-    {
-        get { return this.balance; }
-        set { this.balance = value; }
-    }
-
-    public void Deposit(double amount)
-    {
-        this.balance += amount;
-    }
-
-    public void Withdraw(double amount)
-    {
-        if (this.balance < amount)
+        public int ID
         {
-            System.Console.WriteLine("Insufficient balance");
+            get { return this.id; }
+            set { this.id = value; }
         }
-        else
-        {
-            this.balance -= amount;
-        }     
-    }
 
-    public override string ToString()
-    {
-        return $"Account ID{this.id}, balance {this.balance:f2}";
+        public double Balance
+        {
+            get { return this.balance; }
+            set { this.balance = value; }
+        }
+
+        public void Deposit(double amount)
+        {
+            this.balance += amount;
+        }
+
+        public void Withdraw(double amount)
+        {
+            if (this.balance < amount)
+            {
+                System.Console.WriteLine("Insufficient balance");
+            }
+            else
+            {
+                this.balance -= amount;
+            }
+        }
+
+        public override string ToString()
+        {
+            return $"Account ID{this.id}, balance {this.balance:f2}";
+        }
     }
 }

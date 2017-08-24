@@ -1,18 +1,20 @@
-﻿public class BankAccount
+﻿namespace _01.DefineBankAccountClass
 {
-    private int id;
-    private double balance;
-
-    public int ID
+    public class BankAccount
     {
-        get { return this.id; }
-        set { this.id = value; }
-    }
+        private int id;
+        private double balance;
 
-    public double Balance
-    {
-        get { return this.balance; }
-        set { this.balance = value; }
+        public int ID
+        {
+            get { return this.id; }
+            set { this.id = value; }
+        }
+
+        public double Balance
+        {
+            get { return this.balance; }
+            set { this.balance = value; }
+        }
     }
 }
-

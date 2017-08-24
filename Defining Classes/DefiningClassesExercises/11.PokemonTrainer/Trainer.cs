@@ -1,33 +1,35 @@
-﻿using System.Collections.Generic;
-
-public class Trainer
+﻿namespace _11.PokemonTrainer
 {
-    private string name;
-    private int badges;
-    private List<Pokemon> pokemons = new List<Pokemon>();
+    using System.Collections.Generic;
 
-    public Trainer(string name)
+    public class Trainer
     {
-        this.Name = name;
-        this.Badges = 0;
-    }
+        private string name;
+        private int badges;
+        private List<Pokemon> pokemons = new List<Pokemon>();
 
-    public string Name
-    {
-        get { return this.name; }
-        set { this.name = value; }
-    }
+        public Trainer(string name)
+        {
+            this.Name = name;
+            this.Badges = 0;
+        }
 
-    public int Badges
-    {
-        get { return this.badges; }
-        set { this.badges = value; }
-    }
+        public string Name
+        {
+            get { return this.name; }
+            private set { this.name = value; }
+        }
 
-    public List<Pokemon> Pokemons
-    {
-        get { return this.pokemons; }
-        set { this.pokemons = value; }
+        public int Badges
+        {
+            get { return this.badges; }
+            set { this.badges = value; }
+        }
+
+        public List<Pokemon> Pokemons
+        {
+            get { return this.pokemons; }
+            private set { this.pokemons = value; }
+        }
     }
 }
-

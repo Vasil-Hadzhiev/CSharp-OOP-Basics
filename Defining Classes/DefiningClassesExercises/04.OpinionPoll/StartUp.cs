@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _04.OpinionPoll
+﻿namespace _04.OpinionPoll
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     public class StartUp
     {
         public static void Main()
@@ -26,11 +24,11 @@ namespace _04.OpinionPoll
                 people.Add(person);
             }
 
-            people.
-                Where(x => x.Age > 30).
-                OrderBy(x => x.Name).
-                ToList().
-                ForEach(x =>
+            people
+                .Where(x => x.Age > 30)
+                .OrderBy(x => x.Name)
+                .ToList()
+                .ForEach(x =>
                 {
                     Console.WriteLine($"{x.Name} - {x.Age}");
                 });

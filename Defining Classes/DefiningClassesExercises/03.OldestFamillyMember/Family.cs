@@ -1,37 +1,33 @@
-﻿using System.Collections.Generic;
-
-public class Family
+﻿namespace _03.OldestFamillyMember
 {
-    private List<Person> people = new List<Person>();
+    using System.Collections.Generic;
 
-    public void AddMember(Person member)
+    public class Family
     {
-        People.Add(member);
-    }
+        private List<Person> people = new List<Person>();
 
-    public Person GetOldestMember()
-    {
-        var oldestAge = int.MinValue;
-        var oldestPerson = new Person(string.Empty, 0);
-
-        for (int i = 0; i < People.Count; i++)
+        public void AddMember(Person member)
         {
-            var currentPerson = new Person(People[i].Name, People[i].Age);
-
-            if (People[i].Age > oldestAge)
-            {
-                oldestAge = People[i].Age;
-                oldestPerson = currentPerson;
-            }
+            this.people.Add(member);
         }
 
-        return oldestPerson;
-    }
+        public Person GetOldestMember()
+        {
+            var oldestAge = int.MinValue;
+            var oldestPerson = new Person(string.Empty, 0);
 
-    public List<Person> People
-    {
-        get { return this.people; }
-        set { this.people = value; }
+            for (int i = 0; i < this.people.Count; i++)
+            {
+                var currentPerson = new Person(this.people[i].Name, this.people[i].Age);
+
+                if (this.people[i].Age > oldestAge)
+                {
+                    oldestAge = this.people[i].Age;
+                    oldestPerson = currentPerson;
+                }
+            }
+
+            return oldestPerson;
+        }
     }
 }
-

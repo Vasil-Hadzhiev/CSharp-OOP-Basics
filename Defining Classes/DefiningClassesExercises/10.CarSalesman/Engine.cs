@@ -1,40 +1,42 @@
-﻿public class Engine
+﻿namespace _10.CarSalesman
 {
-    private string model;
-    private int power;
-    private string displacement;
-    private string efficiency;
-
-    public Engine(string model, int power)
+    public class Engine
     {
-        this.Model = model;
-        this.Power = power;
-        this.Displacement = "n/a";
-        this.Efficiency = "n/a";
-    }
+        private string model;
+        private int power;
+        private string displacement;
+        private string efficiency;
 
-    public string Model
-    {
-        get { return this.model; }
-        set { this.model = value; }
-    }
+        public Engine(string model, int power)
+        {
+            this.Model = model;
+            this.Power = power;
+            this.Displacement = "n/a";
+            this.Efficiency = "n/a";
+        }
 
-    public int Power
-    {
-        get { return this.power; }
-        set { this.power = value; }
-    }
+        public string Model
+        {
+            get { return this.model; }
+            private set { this.model = value; }
+        }
 
-    public string Displacement
-    {
-        get { return this.displacement; }
-        set { this.displacement = value; }
-    }
+        public int Power
+        {
+            get { return this.power; }
+            private set { this.power = value; }
+        }
 
-    public string Efficiency
-    {
-        get { return this.efficiency; }
-        set { this.efficiency = value; }
+        public string Displacement
+        {
+            get { return this.displacement; }
+            set { this.displacement = value; }
+        }
+
+        public string Efficiency
+        {
+            get { return this.efficiency; }
+            set { this.efficiency = value; }
+        }
     }
 }
-

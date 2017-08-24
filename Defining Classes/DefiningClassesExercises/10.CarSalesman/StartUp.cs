@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _10.CarSalesman
+﻿namespace _10.CarSalesman
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     public class StartUp
     {
         public static void Main()
@@ -16,10 +14,9 @@ namespace _10.CarSalesman
 
             for (int i = 0; i < numberOfEngines; i++)
             {
-                var engineTokens = Console.ReadLine().
-                    Split(new char[] { ' ' },
-                    StringSplitOptions.RemoveEmptyEntries).
-                    ToArray();
+                var engineTokens = Console.ReadLine()
+                    .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                    .ToArray();
 
                 var model = engineTokens[0];
                 var power = int.Parse(engineTokens[1]);
@@ -55,10 +52,9 @@ namespace _10.CarSalesman
 
             for (int i = 0; i < numberOfCars; i++)
             {
-                var carTokens = Console.ReadLine().
-                    Split(new[] { ' ' }, 
-                    StringSplitOptions.RemoveEmptyEntries).
-                    ToArray();
+                var carTokens = Console.ReadLine()
+                    .Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                    .ToArray();
 
                 var model = carTokens[0];
                 var engine = carTokens[1];

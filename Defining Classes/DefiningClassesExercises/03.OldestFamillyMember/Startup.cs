@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _03.OldestFamillyMember
+﻿namespace _03.OldestFamillyMember
 {
+    using System;
+
     public class StartUp
     {
         public static void Main()
         {
-            MethodInfo oldestMemberMethod = typeof(Family).GetMethod("GetOldestMember");
-            MethodInfo addMemberMethod = typeof(Family).GetMethod("AddMember");
+            var oldestMemberMethod = typeof(Family).GetMethod("GetOldestMember");
+            var addMemberMethod = typeof(Family).GetMethod("AddMember");
             if (oldestMemberMethod == null || addMemberMethod == null)
             {
                 throw new Exception();

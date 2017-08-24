@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _06.CompanyRoster
+﻿namespace _06.CompanyRoster
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     public class StartUp
     {
         public static void Main()
@@ -54,19 +52,20 @@ namespace _06.CompanyRoster
                 {
                     company[department] = new List<Employee>();
                 }
+
                 company[department].Add(employee);
             }
 
-            var highestPaidDepartment = company.
-                 OrderByDescending(e => e.Value.Sum(d => d.Salary)).
-                 First().
-                 Key;
+            var highestPaidDepartment = company
+                 .OrderByDescending(e => e.Value.Sum(d => d.Salary))
+                 .First()
+                 .Key;
 
             Console.WriteLine($"Highest Average Salary: {highestPaidDepartment}");
 
-            foreach (var employee in company[highestPaidDepartment].
-                OrderByDescending(e => e.Salary).
-                ToList())
+            foreach (var employee in company[highestPaidDepartment]
+                .OrderByDescending(e => e.Salary)
+                .ToList())
             {
                 Console.WriteLine($"{employee.Name} {employee.Salary:f2} {employee.Email} {employee.Age}");
             }

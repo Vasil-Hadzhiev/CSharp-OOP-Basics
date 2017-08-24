@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-public class StartUp
+﻿namespace _05.DateModifier
 {
-    public static void Main()
-    {
-        string date1 = Console.ReadLine();
-        string date2 = Console.ReadLine();
+    using System;
 
-        Console.WriteLine(DateModifier.DifferenceBetweenTwoDates(date1, date2));
+    public class StartUp
+    {
+        public static void Main()
+        {
+            var date1 = Console.ReadLine();
+            var date2 = Console.ReadLine();
+
+            Console.WriteLine(DateModifier.DifferenceBetweenTwoDates(date1, date2));
+        }
     }
 }
-

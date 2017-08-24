@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-
-namespace _13.FamilyTree
+﻿namespace _13.FamilyTree
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text.RegularExpressions;
+
     public class FamilyTree
     {
         public static void Main()
@@ -52,11 +50,11 @@ namespace _13.FamilyTree
                     var parentBirthday = tokens[0];
                     var childBirthday = tokens[1];
 
-                    parent = family.
-                        First(p => p.Birthday == parentBirthday);
+                    parent = family
+                        .First(p => p.Birthday == parentBirthday);
 
-                    child = family.
-                        First(c => c.Birthday == childBirthday);
+                    child = family
+                        .First(c => c.Birthday == childBirthday);
                 }
                 else if (tokens[0].Contains('/') || tokens[1].Contains('/'))
                 {
@@ -68,22 +66,22 @@ namespace _13.FamilyTree
                         name = tokens[1];
                         birthday = tokens[0];
 
-                        parent = family.
-                            First(p => p.Birthday == birthday);
+                        parent = family
+                            .First(p => p.Birthday == birthday);
 
-                        child = family.
-                            First(c => c.Name == name);
+                        child = family
+                            .First(c => c.Name == name);
                     }
                     else
                     {
                         name = tokens[0];
                         birthday = tokens[1];
 
-                        parent = family.
-                            First(p => p.Name == name);
+                        parent = family
+                            .First(p => p.Name == name);
 
-                        child = family.
-                            First(c => c.Birthday == birthday);
+                        child = family
+                            .First(c => c.Birthday == birthday);
                     }
                 }
                 else
@@ -91,11 +89,11 @@ namespace _13.FamilyTree
                     var parentName = tokens[0];
                     var childName = tokens[1];
 
-                    parent = family.
-                            First(p => p.Name == parentName);
+                    parent = family
+                            .First(p => p.Name == parentName);
 
-                    child = family.
-                        First(c => c.Name == childName);
+                    child = family
+                        .First(c => c.Name == childName);
                 }
 
                 if (!parent.Children.Contains(child))
@@ -113,13 +111,13 @@ namespace _13.FamilyTree
 
             if (input.Contains('/'))
             {
-                mainPerson = family.
-                    First(p => p.Birthday == input);
+                mainPerson = family
+                    .First(p => p.Birthday == input);
             }
             else
             {
-                mainPerson = family.
-                    First(p => p.Name == input);
+                mainPerson = family
+                    .First(p => p.Name == input);
             }
 
             Console.WriteLine(mainPerson.ToString());
@@ -128,6 +126,7 @@ namespace _13.FamilyTree
             {
                 Console.WriteLine(parent.ToString());
             }
+
             Console.WriteLine("Children:");
             foreach (var child in mainPerson.Children)
             {

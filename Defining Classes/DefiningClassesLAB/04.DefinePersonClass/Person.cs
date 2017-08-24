@@ -1,47 +1,49 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-public class Person
+﻿namespace _04.DefinePersonClass
 {
-    private string name;
-    private int age;
-    private List<BankAccount> accounts;
+    using System.Collections.Generic;
+    using System.Linq;
 
-    public Person(string name, int age)
+    public class Person
     {
-        this.name = name;
-        this.age = age;
-    }
+        private string name;
+        private int age;
+        private List<BankAccount> accounts;
 
-    public Person(string name, int age, List<BankAccount> accounts)
-        :this(name, age)
-    {
-        this.name = name;
-        this.age = age;
-        this.accounts = accounts;
-    }
+        public Person(string name, int age)
+        {
+            this.name = name;
+            this.age = age;
+        }
 
-    public string Name
-    {
-        get { return this.name; }
-        set { this.name = value; }
-    }
+        public Person(string name, int age, List<BankAccount> accounts)
+            : this(name, age)
+        {
+            this.name = name;
+            this.age = age;
+            this.accounts = accounts;
+        }
 
-    public int Age
-    {
-        get { return this.age; }
-        set { this.age = value; }
-    }
+        public string Name
+        {
+            get { return this.name; }
+            set { this.name = value; }
+        }
 
-    public List<BankAccount> Accounts
-    {
-        get { return this.accounts; }
-        set { this.accounts = value; }
-    }
+        public int Age
+        {
+            get { return this.age; }
+            set { this.age = value; }
+        }
 
-    public double GetBalance()
-    {
-        return this.accounts.Select(a => a.Balance).Sum();
+        public List<BankAccount> Accounts
+        {
+            get { return this.accounts; }
+            set { this.accounts = value; }
+        }
+
+        public double GetBalance()
+        {
+            return this.accounts.Select(a => a.Balance).Sum();
+        }
     }
 }
-

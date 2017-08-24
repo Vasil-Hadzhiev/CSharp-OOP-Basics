@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-public class StartUp
+﻿namespace _01.DefineBankAccountClass
 {
-    public static void Main()
+    using System;
+
+    public class StartUp
     {
-        var acc = new BankAccount();
+        public static void Main()
+        {
+            var acc = new BankAccount();
 
-        acc.ID = 1;
-        acc.Balance = 15;
+            acc.ID = 1;
+            acc.Balance = 15;
 
-        Console.WriteLine($"Account {acc.ID}, balance {acc.Balance}");
+            Console.WriteLine($"Account {acc.ID}, balance {acc.Balance}");
+        }
     }
 }
-

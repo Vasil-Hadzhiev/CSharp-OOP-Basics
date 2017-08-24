@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-public class StartUp
+﻿namespace _02.Methods
 {
-    public static void Main()
+    using System;
+
+    public class StartUp
     {
-        var acc = new BankAccount();
+        public static void Main()
+        {
+            var acc = new BankAccount();
 
-        acc.ID = 1;
-        acc.Deposit(15);
-        acc.Withdraw(5);
+            acc.ID = 1;
+            acc.Deposit(15);
+            acc.Withdraw(5);
 
-        Console.WriteLine(acc.ToString());
+            Console.WriteLine(acc.ToString());
+        }
     }
 }
-
