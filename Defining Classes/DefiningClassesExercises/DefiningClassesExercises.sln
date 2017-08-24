@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.DefineAClassPerson", "01
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.CreatingConstructors", "02.CreatingConstructors\02.CreatingConstructors.csproj", "{4AB92C5B-5C33-4D27-9DC7-CEF5989586E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.OldestFamillyMember", "03.OldestFamillyMember\03.OldestFamillyMember.csproj", "{9401FD31-5530-4D6C-BABE-2F360B342326}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.OldestFamilyMember", "03.OldestFamillyMember\03.OldestFamilyMember.csproj", "{9401FD31-5530-4D6C-BABE-2F360B342326}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.OpinionPoll", "04.OpinionPoll\04.OpinionPoll.csproj", "{91A49227-E357-48CF-A4B0-ECAE74D8E077}"
 EndProject
