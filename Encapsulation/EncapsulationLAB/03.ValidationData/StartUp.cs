@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _03.ValidationData
+﻿namespace _03.ValidationData
 {
+    using System;
+    using System.Collections.Generic;
+
     public class StartUp
     {
         public static void Main()
@@ -18,11 +15,11 @@ namespace _03.ValidationData
 
                 try
                 {
-                    var person = new Person(cmdArgs[0],
-                                        cmdArgs[1],
-                                        int.Parse(cmdArgs[2]),
-                                        double.Parse(cmdArgs[3]));
-
+                    var person = new Person(
+                        cmdArgs[0],
+                        cmdArgs[1],
+                        int.Parse(cmdArgs[2]),
+                        double.Parse(cmdArgs[3]));
 
                     persons.Add(person);
                 }
@@ -31,11 +28,14 @@ namespace _03.ValidationData
                     Console.WriteLine(ex.Message);
                 }
             }
+
             var bonus = double.Parse(Console.ReadLine());
+
             foreach (var person in persons)
             {
                 person.IncreaseSalary(bonus);
             }
+
             persons.ForEach(p => Console.WriteLine(p.ToString()));
         }
     }

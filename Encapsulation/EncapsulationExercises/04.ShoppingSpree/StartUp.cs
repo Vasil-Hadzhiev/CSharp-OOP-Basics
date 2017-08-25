@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _04.ShoppingSpree
+﻿namespace _04.ShoppingSpree
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     public class StartUp
     {
         public static void Main()
@@ -13,10 +11,9 @@ namespace _04.ShoppingSpree
             var people = new List<Person>();
             var products = new List<Product>();
 
-            var inputPeople = Console.ReadLine().
-                Split(new char[] { ';' },
-                StringSplitOptions.RemoveEmptyEntries).
-                ToArray();
+            var inputPeople = Console.ReadLine()
+                .Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries)
+                .ToArray();
 
             foreach (var personInfo in inputPeople)
             {
@@ -37,10 +34,9 @@ namespace _04.ShoppingSpree
                 }
             }
                 
-            var inputProducts = Console.ReadLine().
-                Split(new char[] { ';' },
-                StringSplitOptions.RemoveEmptyEntries).
-                ToArray();
+            var inputProducts = Console.ReadLine()
+                .Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries)
+                .ToArray();
 
             foreach (var productInfo in inputProducts)
             {
@@ -75,11 +71,11 @@ namespace _04.ShoppingSpree
                 var personName = tokens[0];
                 var productName = tokens[1];
 
-                var person = people.
-                    FirstOrDefault(p => p.Name == personName);
+                var person = people
+                    .FirstOrDefault(p => p.Name == personName);
 
-                var product = products.
-                    FirstOrDefault(p => p.Name == productName);
+                var product = products
+                    .FirstOrDefault(p => p.Name == productName);
 
                 try
                 {

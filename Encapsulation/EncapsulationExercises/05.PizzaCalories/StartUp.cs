@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _05.PizzaCalories
+﻿namespace _05.PizzaCalories
 {
+    using System;
+    using Models;
+
     public class StartUp
     {
         public static void Main()

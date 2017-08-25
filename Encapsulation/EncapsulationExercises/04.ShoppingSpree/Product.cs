@@ -1,41 +1,52 @@
-﻿using System;
-
-public class Product
+﻿namespace _04.ShoppingSpree
 {
-    private string name;
-    private decimal cost;
+    using System;
 
-    public Product(string name, decimal cost)
+    public class Product
     {
-        this.Name = name;
-        this.Cost = cost;   
-    }
+        private string name;
+        private decimal cost;
 
-    public string Name
-    {
-        get { return this.name; }
-        set
+        public Product(string name, decimal cost)
         {
-            if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
-            {
-                throw new ArgumentException("Name cannot be empty");
-            }
-
-            this.name = value;
+            this.Name = name;
+            this.Cost = cost;
         }
-    }
 
-    public decimal Cost
-    {
-        get { return this.cost; }
-        set
+        public string Name
         {
-            if (value < 0)
+            get
             {
-                throw new ArgumentException("Money cannot be negative");
+                return this.name;
             }
 
-            this.cost = value;
+            set
+            {
+                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Name cannot be empty");
+                }
+
+                this.name = value;
+            }
+        }
+
+        public decimal Cost
+        {
+            get
+            {
+                return this.cost;
+            }
+
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Money cannot be negative");
+                }
+
+                this.cost = value;
+            }
         }
     }
 }

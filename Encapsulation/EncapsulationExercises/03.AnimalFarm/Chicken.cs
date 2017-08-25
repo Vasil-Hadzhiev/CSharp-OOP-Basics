@@ -1,80 +1,84 @@
-﻿using System;
-
-public class Chicken
+﻿namespace _03.AnimalFarm
 {
-    private const int MinAge = 0;
-    private const int MaxAge = 15;
+    using System;
 
-    private string name;
-    private int age;
-
-    internal Chicken(string name, int age)
+    public class Chicken
     {
-        this.Name = name;
-        this.Age = age;
-    }
+        private const int MinAge = 0;
+        private const int MaxAge = 15;
 
-    public string Name
-    {
-        get
+        private string name;
+        private int age;
+
+        internal Chicken(string name, int age)
         {
-            return this.name;
+            this.Name = name;
+            this.Age = age;
         }
 
-        private set
+        public string Name
         {
-            if (string.IsNullOrWhiteSpace(value) || string.IsNullOrEmpty(value))
+            get
             {
-                throw new ArgumentException($"{nameof(Name)} cannot be empty.");
+                return this.name;
             }
 
-            this.name = value;
-        }
-    }
-
-    public int Age
-    {
-        get
-        {
-            return this.age;
-        }
-
-        private set
-        {
-            if (value < MinAge || value > MaxAge)
+            private set
             {
-                throw new ArgumentException("Age should be between 0 and 15.");
+                if (string.IsNullOrWhiteSpace(value) || string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentException($"{nameof(Name)} cannot be empty.");
+                }
+
+                this.name = value;
             }
-            this.age = value;
         }
-    }
 
-    public double GetProductPerDay()
-    {
-        return this.CalculateProductPerDay();
-    }
-
-    private double CalculateProductPerDay()
-    {
-        switch (this.Age)
+        public int Age
         {
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-                return 1.5;
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-                return 2;
-            case 8:
-            case 9:
-            case 10:
-            case 11:
-                return 1;
-            default:
-                return 0.75;
+            get
+            {
+                return this.age;
+            }
+
+            private set
+            {
+                if (value < MinAge || value > MaxAge)
+                {
+                    throw new ArgumentException("Age should be between 0 and 15.");
+                }
+
+                this.age = value;
+            }
+        }
+
+        public double GetProductPerDay()
+        {
+            return this.CalculateProductPerDay();
+        }
+
+        private double CalculateProductPerDay()
+        {
+            switch (this.Age)
+            {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    return 1.5;
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                    return 2;
+                case 8:
+                case 9:
+                case 10:
+                case 11:
+                    return 1;
+                default:
+                    return 0.75;
+            }
         }
     }
 }

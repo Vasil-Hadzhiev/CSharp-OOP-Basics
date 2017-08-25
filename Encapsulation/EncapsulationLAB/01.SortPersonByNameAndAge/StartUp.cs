@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _01.SortPersonByNameAndAge
+﻿namespace _01.SortPersonByNameAndAge
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     public class StartUp
     {
         public static void Main()
@@ -23,7 +21,6 @@ namespace _01.SortPersonByNameAndAge
                    .ThenBy(p => p.Age)
                    .ToList()
                    .ForEach(p => Console.WriteLine(p.ToString()));
-
         }
     }
 }

@@ -1,114 +1,140 @@
-﻿using System;
-
-public class Player
+﻿namespace _06.FootballTeamGenerator
 {
-    private const int minStat = 0;
-    private const int maxStat = 100;
+    using System;
 
-    private string name;
-    private int endurance;
-    private int sprint;
-    private int dribble;
-    private int passing;
-    private int shooting;
-
-    public Player(string name, int endurance, int sprint, int dribble, int passing, int shooting)
+    public class Player
     {
-        this.Name = name;
-        this.Endurance = endurance;
-        this.Sprint = sprint;
-        this.Dribble = dribble;
-        this.Passing = passing;
-        this.Shooting = shooting;
-    }
+        private const int MinStat = 0;
+        private const int MaxStat = 100;
 
-    public string Name
-    {
-        get { return this.name; }
-        private set
+        private string name;
+        private int endurance;
+        private int sprint;
+        private int dribble;
+        private int passing;
+        private int shooting;
+
+        public Player(string name, int endurance, int sprint, int dribble, int passing, int shooting)
         {
-            if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+            this.Name = name;
+            this.Endurance = endurance;
+            this.Sprint = sprint;
+            this.Dribble = dribble;
+            this.Passing = passing;
+            this.Shooting = shooting;
+        }
+
+        public string Name
+        {
+            get
             {
-                throw new ArgumentException("A name should not be empty.");
+                return this.name;
             }
 
-            this.name = value;
-        }
-    }
-
-    public int Endurance
-    {
-        get { return this.endurance; }
-        private set
-        {
-            if (value < minStat || value > maxStat)
+            private set
             {
-                throw new ArgumentException("Endurance should be between 0 and 100.");
+                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("A name should not be empty.");
+                }
+
+                this.name = value;
+            }
+        }
+
+        public int Endurance
+        {
+            get
+            {
+                return this.endurance;
             }
 
-            this.endurance = value;
-        }
-    }
-
-    public int Sprint
-    {
-        get { return this.sprint; }
-        private set
-        {
-            if (value < minStat || value > maxStat)
+            private set
             {
-                throw new ArgumentException("Sprint should be between 0 and 100.");
+                if (value < MinStat || value > MaxStat)
+                {
+                    throw new ArgumentException("Endurance should be between 0 and 100.");
+                }
+
+                this.endurance = value;
+            }
+        }
+
+        public int Sprint
+        {
+            get
+            {
+                return this.sprint;
             }
 
-            this.sprint = value;
-        }
-    }
-
-    public int Dribble
-    {
-        get { return this.dribble; }
-        private set
-        {
-            if (value < minStat || value > maxStat)
+            private set
             {
-                throw new ArgumentException("Dribble should be between 0 and 100.");
+                if (value < MinStat || value > MaxStat)
+                {
+                    throw new ArgumentException("Sprint should be between 0 and 100.");
+                }
+
+                this.sprint = value;
+            }
+        }
+
+        public int Dribble
+        {
+            get
+            {
+                return this.dribble;
             }
 
-            this.dribble = value;
-        }
-    }
-
-    public int Passing
-    {
-        get { return this.passing; }
-        private set
-        {
-            if (value < minStat || value > maxStat)
+            private set
             {
-                throw new ArgumentException("Passing should be between 0 and 100.");
+                if (value < MinStat || value > MaxStat)
+                {
+                    throw new ArgumentException("Dribble should be between 0 and 100.");
+                }
+
+                this.dribble = value;
+            }
+        }
+
+        public int Passing
+        {
+            get
+            {
+                return this.passing;
             }
 
-            this.passing = value;
-        }
-    }
-
-    public int Shooting
-    {
-        get { return this.shooting; }
-        private set
-        {
-            if (value < minStat || value > maxStat)
+            private set
             {
-                throw new ArgumentException("Shooting should be between 0 and 100.");
+                if (value < MinStat || value > MaxStat)
+                {
+                    throw new ArgumentException("Passing should be between 0 and 100.");
+                }
+
+                this.passing = value;
+            }
+        }
+
+        public int Shooting
+        {
+            get
+            {
+                return this.shooting;
             }
 
-            this.shooting = value;
-        }
-    }
+            private set
+            {
+                if (value < MinStat || value > MaxStat)
+                {
+                    throw new ArgumentException("Shooting should be between 0 and 100.");
+                }
 
-    public int PlayerRating()
-    {
-        return (int)Math.Round((double)(this.Endurance + this.Sprint + this.Dribble + this.Shooting + this.Passing) / 5);
+                this.shooting = value;
+            }
+        }
+
+        public int PlayerRating()
+        {
+            return (int)Math.Round((double)(this.Endurance + this.Sprint + this.Dribble + this.Shooting + this.Passing) / 5);
+        }
     }
 }
-

@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _06.FootballTeamGenerator
+﻿namespace _06.FootballTeamGenerator
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     public class StartUp
     {
         public static void Main()
@@ -36,8 +34,8 @@ namespace _06.FootballTeamGenerator
                         case "Add":
                             if (teams.Any(t => t.Name == tokens[1]))
                             {
-                                var currentTeam = teams.
-                                    FirstOrDefault(t => t.Name == tokens[1]);
+                                var currentTeam = teams
+                                    .FirstOrDefault(t => t.Name == tokens[1]);
 
                                 var newPlayer = new Player(
                                     tokens[2],
@@ -53,10 +51,11 @@ namespace _06.FootballTeamGenerator
                             {
                                 throw new ArgumentException($"Team {tokens[1]} does not exist.");
                             }
+
                             break;
                         case "Remove":
-                            var teamToRemoveFrom = teams.
-                                FirstOrDefault(t => t.Name == tokens[1]);
+                            var teamToRemoveFrom = teams
+                                .FirstOrDefault(t => t.Name == tokens[1]);
 
                             teamToRemoveFrom.RemovePlayer(tokens[2]);
                             break;
@@ -70,6 +69,7 @@ namespace _06.FootballTeamGenerator
                             {
                                 throw new ArgumentException($"Team {tokens[1]} does not exist.");
                             }
+
                             break;
                     }
                 }
@@ -81,4 +81,3 @@ namespace _06.FootballTeamGenerator
         }
     }
 }
-
