@@ -1,9 +1,9 @@
-﻿using System;
-public class Dog : Animal
-{
-    public void Bark()
+﻿namespace _01.SingleInheritance
+{ 
+    public class Dog : Animal
     {
-
+        public void Bark()
+        {
+        }
     }
 }
-

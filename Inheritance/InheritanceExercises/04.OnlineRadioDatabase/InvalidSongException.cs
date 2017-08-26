@@ -1,19 +1,19 @@
-﻿using System;
-
-public class InvalidSongException : Exception
+﻿namespace _04.OnlineRadioDatabase
 {
-    private const string Message = "Invalid song.";
+    using System;
 
-    public InvalidSongException()
-        : base(Message)
+    public class InvalidSongException : Exception
     {
+        private const string Message = "Invalid song.";
 
-    }
+        public InvalidSongException()
+            : base(Message)
+        {
+        }
 
-    public InvalidSongException(string message) 
-        : base(message)
-    {
-
+        public InvalidSongException(string message)
+            : base(message)
+        {
+        }
     }
 }
-

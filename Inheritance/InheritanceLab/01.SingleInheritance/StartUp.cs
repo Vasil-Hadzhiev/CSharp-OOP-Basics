@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-public class StartUp
+﻿namespace _01.SingleInheritance
 {
-    public static void Main()
+    public class StartUp
     {
-        Dog dog = new Dog();
+        public static void Main()
+        {
+            Dog dog = new Dog();
 
-        dog.Eat();
-        dog.Bark();
+            dog.Eat();
+            dog.Bark();
+        }
     }
 }

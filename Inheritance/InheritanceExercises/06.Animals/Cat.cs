@@ -1,13 +1,15 @@
-﻿public class Cat : Animal
+﻿namespace _06.Animals
 {
-    public Cat(string name, int age, string gender) 
-        : base(name, age, gender)
+    public class Cat : Animal
     {
-    }
+        public Cat(string name, int age, string gender)
+            : base(name, age, gender)
+        {
+        }
 
-    public override string ProduceSound()
-    {
-        return "MiauMiau";
+        public override string ProduceSound()
+        {
+            return "MiauMiau";
+        }
     }
 }
-

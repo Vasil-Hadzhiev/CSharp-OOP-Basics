@@ -1,18 +1,17 @@
-﻿using System;
-
-public class InvalidSongSecondsException : InvalidSongLength
+﻿namespace _04.OnlineRadioDatabase
 {
-    private const string Message = "Song seconds should be between 0 and 59.";
-
-    public InvalidSongSecondsException()
-        : base(Message)
+    public class InvalidSongSecondsException : InvalidSongLength
     {
+        private const string Message = "Song seconds should be between 0 and 59.";
 
-    }
+        public InvalidSongSecondsException()
+            : base(Message)
+        {
+        }
 
-    public InvalidSongSecondsException(string message) 
-        : base(message)
-    {
+        public InvalidSongSecondsException(string message)
+            : base(message)
+        {
+        }
     }
 }
-

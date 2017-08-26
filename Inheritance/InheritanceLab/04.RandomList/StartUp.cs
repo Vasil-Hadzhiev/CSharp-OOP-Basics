@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-public class StartUp
+﻿namespace _04.RandomList
 {
-    public static void Main(string[] args)
+    public class StartUp
     {
-
+        public static void Main()
+        {
+        }
     }
 }
-

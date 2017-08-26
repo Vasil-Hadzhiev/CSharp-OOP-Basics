@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-public class StartUp
+﻿namespace _05.StackOfStrings
 {
-    static void Main()
+    public class StartUp
     {
+        public static void Main()
+        {
+        }
     }
 }
-

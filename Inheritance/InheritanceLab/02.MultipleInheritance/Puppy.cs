@@ -1,8 +1,10 @@
-﻿public class Puppy : Dog
+﻿namespace _02.MultipleInheritance
 {
-    public void Weep()
+    public class Puppy : Dog
     {
-        System.Console.WriteLine("weeping...");
+        public void Weep()
+        {
+            System.Console.WriteLine("weeping...");
+        }
     }
 }
-

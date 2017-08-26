@@ -1,62 +1,72 @@
-﻿using System;
-using System.Text;
-
-public class Worker : Human
+﻿namespace _03.Mankind
 {
-    private decimal weekSalary;
-    private double workHours;
+    using System;
+    using System.Text;
 
-    public Worker(string firstName, string lastName, decimal weekSalary, double workHours) 
-        : base(firstName, lastName)
+    public class Worker : Human
     {
-        this.WeekSalary = weekSalary;
-        this.WorkHours = workHours;
-    }
+        private decimal weekSalary;
+        private double workHours;
 
-    public decimal WeekSalary
-    {
-        get { return this.weekSalary; }
-        private set
+        public Worker(string firstName, string lastName, decimal weekSalary, double workHours)
+            : base(firstName, lastName)
         {
-            if (value <= 10)
+            this.WeekSalary = weekSalary;
+            this.WorkHours = workHours;
+        }
+
+        public decimal WeekSalary
+        {
+            get
             {
-                throw new ArgumentException($"Expected value mismatch! Argument: weekSalary");
+                return this.weekSalary;
             }
 
-            this.weekSalary = value;
-        }
-    }
-
-    public double WorkHours
-    {
-        get { return this.workHours; }
-        private set
-        {
-            if (value < 1 || value > 12)
+            private set
             {
-                throw new ArgumentException($"Expected value mismatch! Argument: workHoursPerDay");
+                if (value <= 10)
+                {
+                    throw new ArgumentException($"Expected value mismatch! Argument: weekSalary");
+                }
+
+                this.weekSalary = value;
+            }
+        }
+
+        public double WorkHours
+        {
+            get
+            {
+                return this.workHours;
             }
 
-            this.workHours = value;
+            private set
+            {
+                if (value < 1 || value > 12)
+                {
+                    throw new ArgumentException($"Expected value mismatch! Argument: workHoursPerDay");
+                }
+
+                this.workHours = value;
+            }
         }
-    }
 
-    public decimal SalaryPerHour()
-    {
-        return this.weekSalary / ((decimal)this.WorkHours * 5);
-    }
+        public decimal SalaryPerHour()
+        {
+            return this.weekSalary / ((decimal)this.WorkHours * 5);
+        }
 
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
 
-        sb.AppendLine($"First Name: {this.FirstName}");
-        sb.AppendLine($"Last Name: {this.LastName}");
-        sb.AppendLine($"Week Salary: {this.WeekSalary:f2}");
-        sb.AppendLine($"Hours per day: {this.WorkHours:f2}");
-        sb.AppendLine($"Salary per hour: {this.SalaryPerHour():f2}");
+            sb.AppendLine($"First Name: {this.FirstName}");
+            sb.AppendLine($"Last Name: {this.LastName}");
+            sb.AppendLine($"Week Salary: {this.WeekSalary:f2}");
+            sb.AppendLine($"Hours per day: {this.WorkHours:f2}");
+            sb.AppendLine($"Salary per hour: {this.SalaryPerHour():f2}");
 
-        return sb.ToString();
+            return sb.ToString();
+        }
     }
 }
-

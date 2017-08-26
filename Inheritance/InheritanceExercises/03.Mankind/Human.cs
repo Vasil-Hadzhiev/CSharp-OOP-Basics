@@ -1,63 +1,73 @@
-﻿using System;
-using System.Text;
-
-public class Human
+﻿namespace _03.Mankind
 {
-    private string firstName;
-    private string lastName;
+    using System;
+    using System.Text;
 
-    public Human(string firstName, string lastName)
+    public class Human
     {
-        this.FirstName = firstName;
-        this.LastName = lastName;
-    }
+        private string firstName;
+        private string lastName;
 
-    public string FirstName
-    {
-        get { return this.firstName; }
-        private set
+        public Human(string firstName, string lastName)
         {
-            if (char.IsLower(value[0]))
-            {
-                throw new ArgumentException($"Expected upper case letter! Argument: firstName");
-            }
-
-            if (value.Length < 4)
-            {
-                throw new ArgumentException($"Expected length at least 4 symbols! Argument: firstName");
-            }
-
-            this.firstName = value;
+            this.FirstName = firstName;
+            this.LastName = lastName;
         }
-    }
 
-    public string LastName
-    {
-        get { return this.lastName; }
-        private set
+        public string FirstName
         {
-            if (char.IsLower(value[0]))
+            get
             {
-                throw new ArgumentException($"Expected upper case letter! Argument: lastName");
+                return this.firstName;
             }
 
-            if (value.Length < 3)
+            private set
             {
-                throw new ArgumentException($"Expected length at least 3 symbols! Argument: lastName");
-            }
+                if (char.IsLower(value[0]))
+                {
+                    throw new ArgumentException($"Expected upper case letter! Argument: firstName");
+                }
 
-            this.lastName = value;
+                if (value.Length < 4)
+                {
+                    throw new ArgumentException($"Expected length at least 4 symbols! Argument: firstName");
+                }
+
+                this.firstName = value;
+            }
         }
-    }
 
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
+        public string LastName
+        {
+            get
+            {
+                return this.lastName;
+            }
 
-        sb.AppendLine($"First Name: {this.FirstName}");
-        sb.AppendLine($"Last Name: {this.LastName}");
+            private set
+            {
+                if (char.IsLower(value[0]))
+                {
+                    throw new ArgumentException($"Expected upper case letter! Argument: lastName");
+                }
 
-        return sb.ToString();
+                if (value.Length < 3)
+                {
+                    throw new ArgumentException($"Expected length at least 3 symbols! Argument: lastName");
+                }
+
+                this.lastName = value;
+            }
+        }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+
+            sb.AppendLine($"First Name: {this.FirstName}");
+            sb.AppendLine($"Last Name: {this.LastName}");
+
+            return sb.ToString();
+        }
     }
 }
-

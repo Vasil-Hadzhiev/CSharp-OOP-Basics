@@ -1,25 +1,30 @@
-﻿using System;
-
-public class Child : Person
+﻿namespace _01.Person
 {
-    public Child(string name, int age) 
-        : base(name, age)
-    {
+    using System;
 
-    }
-
-    public override int Age
+    public class Child : Person
     {
-        get { return base.Age; }
-        set
+        public Child(string name, int age)
+            : base(name, age)
         {
-            if (value > 15)
+        }
+
+        public override int Age
+        {
+            get
             {
-                throw new ArgumentException("Child's age must be less than 15!");
+                return base.Age;
             }
 
-            base.Age = value;
+            set
+            {
+                if (value > 15)
+                {
+                    throw new ArgumentException("Child's age must be less than 15!");
+                }
+
+                base.Age = value;
+            }
         }
     }
 }
-

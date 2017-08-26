@@ -1,16 +1,18 @@
-﻿using System;
-
-public class GoldenEditionBook : Book
+﻿namespace _02.BookShop
 {
-    public GoldenEditionBook(string title, string author, decimal price) 
-        : base(title, author, price)
+    public class GoldenEditionBook : Book
     {
-        
-    }
+        public GoldenEditionBook(string title, string author, decimal price)
+            : base(title, author, price)
+        {
+        }
 
-    public override decimal Price
-    {
-        get { return base.Price + (base.Price * (30m / 100m)); }
+        public override decimal Price
+        {
+            get
+            {
+                return base.Price + (base.Price * (30m / 100m));
+            }
+        }
     }
 }
-

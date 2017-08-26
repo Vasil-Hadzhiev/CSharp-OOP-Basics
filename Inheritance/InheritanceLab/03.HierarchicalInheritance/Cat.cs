@@ -1,10 +1,12 @@
-﻿using System;
-
-public class Cat : Animal
+﻿namespace _03.HierarchicalInhertiance
 {
-    public void Meow()
+    using System;
+
+    public class Cat : Animal
     {
-        Console.WriteLine("meowing...");
+        public void Meow()
+        {
+            Console.WriteLine("meowing...");
+        }
     }
 }
-

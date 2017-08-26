@@ -1,21 +1,23 @@
-﻿using System;
-
-public class StartUp
+﻿namespace _01.Person
 {
-    public static void Main()
+    using System;
+
+    public class StartUp
     {
-        var name = Console.ReadLine();
-        var age = int.Parse(Console.ReadLine());
-
-        try
+        public static void Main()
         {
-            var child = new Child(name, age);
-            Console.WriteLine(child);
-        }
-        catch (ArgumentException ae)
-        {
-            Console.WriteLine(ae.Message);
-        }
+            var name = Console.ReadLine();
+            var age = int.Parse(Console.ReadLine());
 
+            try
+            {
+                var child = new Child(name, age);
+                Console.WriteLine(child);
+            }
+            catch (ArgumentException ae)
+            {
+                Console.WriteLine(ae.Message);
+            }
+        }
     }
 }

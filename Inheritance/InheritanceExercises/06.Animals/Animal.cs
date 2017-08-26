@@ -1,75 +1,89 @@
-﻿using System;
-using System.Text;
-
-public class Animal
+﻿namespace _06.Animals
 {
-    private string name;
-    private int age;
-    private string gender;
+    using System;
+    using System.Text;
 
-    public Animal(string name, int age, string gender)
+    public class Animal
     {
-        this.Name = name;
-        this.Age = age;
-        this.Gender = gender;
-    }
+        private string name;
+        private int age;
+        private string gender;
 
-    public string Name
-    {
-        get { return this.name; }
-        private set
+        public Animal(string name, int age, string gender)
         {
-            if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+            this.Name = name;
+            this.Age = age;
+            this.Gender = gender;
+        }
+
+        public string Name
+        {
+            get
             {
-                throw new ArgumentException("Invalid input!");
+                return this.name;
             }
 
-            this.name = value;
-        }
-    }
-
-    public int Age
-    {
-        get { return this.age; }
-        private set
-        {
-            if (value < 0 || string.IsNullOrWhiteSpace(value.ToString()))
+            private set
             {
-                throw new ArgumentException("Invalid input!");
+                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Invalid input!");
+                }
+
+                this.name = value;
+            }
+        }
+
+        public int Age
+        {
+            get
+            {
+                return this.age;
             }
 
-            this.age = value;
-        }
-    }
-
-    public string Gender
-    {
-        get { return this.gender; }
-        private set
-        {
-            if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+            private set
             {
-                throw new ArgumentException("Invalid input!");
+                if (value < 0 || string.IsNullOrWhiteSpace(value.ToString()))
+                {
+                    throw new ArgumentException("Invalid input!");
+                }
+
+                this.age = value;
+            }
+        }
+
+        public string Gender
+        {
+            get
+            {
+                return this.gender;
             }
 
-            this.gender = value;
+            private set
+            {
+                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Invalid input!");
+                }
+
+                this.gender = value;
+            }
         }
-    }
 
-    public virtual string ProduceSound()
-    {
-        return "Raaaa!!!";
-    }
+        public virtual string ProduceSound()
+        {
+            return "Raaaa!!!";
+        }
 
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
 
-        sb.AppendLine($"{this.GetType()}");
-        sb.AppendLine($"{this.Name} {this.Age} {this.Gender}");
-        sb.Append($"{this.ProduceSound()}");
+            sb.AppendLine($"{this.GetType()}");
+            sb.AppendLine($"{this.Name} {this.Age} {this.Gender}");
+            sb.Append($"{this.ProduceSound()}");
 
-        return sb.ToString();
+            return sb.ToString();
+        }
     }
 }
-

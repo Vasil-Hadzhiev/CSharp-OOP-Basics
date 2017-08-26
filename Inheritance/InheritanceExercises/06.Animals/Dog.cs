@@ -1,13 +1,15 @@
-﻿public class Dog : Animal
+﻿namespace _06.Animals
 {
-    public Dog(string name, int age, string gender) 
-        : base(name, age, gender)
+    public class Dog : Animal
     {
-    }
+        public Dog(string name, int age, string gender)
+            : base(name, age, gender)
+        {
+        }
 
-    public override string ProduceSound()
-    {
-        return "BauBau";
+        public override string ProduceSound()
+        {
+            return "BauBau";
+        }
     }
 }
-

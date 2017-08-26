@@ -1,10 +1,12 @@
-﻿using System;
-
-public class Dog : Animal
+﻿namespace _03.HierarchicalInhertiance
 {
-    public void Bark()
+    using System;
+
+    public class Dog : Animal
     {
-        Console.WriteLine("barking...");
+        public void Bark()
+        {
+            Console.WriteLine("barking...");
+        }
     }
 }
-

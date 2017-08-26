@@ -1,28 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-public class StartUp
+﻿namespace _02.BookShop
 {
-    public static void Main()
+    using System;
+
+    public class StartUp
     {
-        try
+        public static void Main()
         {
-            var author = Console.ReadLine();
-            var title = Console.ReadLine();
-            var price = decimal.Parse(Console.ReadLine());
+            try
+            {
+                var author = Console.ReadLine();
+                var title = Console.ReadLine();
+                var price = decimal.Parse(Console.ReadLine());
 
-            var book = new Book(author, title, price);
-            var goldenEditionBook = new GoldenEditionBook(author, title, price);
+                var book = new Book(author, title, price);
+                var goldenEditionBook = new GoldenEditionBook(author, title, price);
 
-            Console.WriteLine(book);
-            Console.WriteLine(goldenEditionBook);
+                Console.WriteLine(book);
+                Console.WriteLine(goldenEditionBook);
+            }
+            catch (ArgumentException ae)
+            {
+                Console.WriteLine(ae.Message);
+            }
         }
-        catch (ArgumentException ae)
-        {
-            Console.WriteLine(ae.Message);
-        }
-
     }
 }
-

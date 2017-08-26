@@ -1,10 +1,12 @@
-﻿using System;
-
-public class Animal
+﻿namespace _03.HierarchicalInhertiance
 {
-    public void Eat()
+    using System;
+
+    public class Animal
     {
-        Console.WriteLine("eating...");
+        public void Eat()
+        {
+            Console.WriteLine("eating...");
+        }
     }
 }
-

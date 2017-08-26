@@ -1,24 +1,26 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-
-public class RandomList : ArrayList
+﻿namespace _04.RandomList
 {
-    private Random rnd;
-    private List<string> list;
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
 
-    public RandomList()
+    public class RandomList : ArrayList
     {
-        this.list = new List<string>();
-    }
+        private Random rnd;
+        private List<string> list;
 
-    public string RandomString()
-    {
-        var element = rnd.Next(0, list.Count - 1);
-        var str = list[element];
-        list.Remove(str);
+        public RandomList()
+        {
+            this.list = new List<string>();
+        }
 
-        return str;
+        public string RandomString()
+        {
+            var element = this.rnd.Next(0, this.list.Count - 1);
+            var str = this.list[element];
+            this.list.Remove(str);
+
+            return str;
+        }
     }
 }
-

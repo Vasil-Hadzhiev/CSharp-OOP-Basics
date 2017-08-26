@@ -1,39 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-public class StackOfStrings
+﻿namespace _05.StackOfString
 {
-    private List<string> data;
+    using System.Collections.Generic;
+    using System.Linq;
 
-    public void Push(string item)
+    public class StackOfStrings
     {
-        this.data.Add(item);
-    }
+        private List<string> data;
 
-    public string Pop()
-    {
-        var item = this.data.Last();
-        this.data.Remove(item);
-
-        return item;
-    }
-
-    public string Peek()
-    {
-        var item = this.data.Last();
-
-        return item;
-    }
-
-    public bool IsEmpty()
-    {
-        if (this.data.Count != 0)
+        public void Push(string item)
         {
-            return false;
+            this.data.Add(item);
         }
 
-        return true;
+        public string Pop()
+        {
+            var item = this.data.Last();
+            this.data.Remove(item);
+
+            return item;
+        }
+
+        public string Peek()
+        {
+            var item = this.data.Last();
+
+            return item;
+        }
+
+        public bool IsEmpty()
+        {
+            if (this.data.Count != 0)
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }
-

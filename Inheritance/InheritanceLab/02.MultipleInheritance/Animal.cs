@@ -1,8 +1,10 @@
-﻿public class Animal
+﻿namespace _02.MultipleInheritance
 {
-    public void Eat()
+    public class Animal
     {
-        System.Console.WriteLine("eating...");
+        public void Eat()
+        {
+            System.Console.WriteLine("eating...");
+        }
     }
 }
-

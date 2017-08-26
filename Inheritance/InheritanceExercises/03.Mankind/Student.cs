@@ -1,50 +1,56 @@
-﻿using System;
-using System.Text;
-using System.Text.RegularExpressions;
-
-public class Student : Human
+﻿namespace _03.Mankind
 {
-    private string facultyNumber;
+    using System;
+    using System.Text;
+    using System.Text.RegularExpressions;
 
-    public Student(string firstName, string lastName, string facultyNumber) 
-        : base(firstName, lastName)
+    public class Student : Human
     {
-        this.FacultyNumber = facultyNumber; 
-    }
+        private string facultyNumber;
 
-    public string FacultyNumber
-    {
-        get { return this.facultyNumber; }
-        private set
+        public Student(string firstName, string lastName, string facultyNumber)
+            : base(firstName, lastName)
         {
-            bool isValid = false;
-            var pattern = @"^([0-9[a-zA-Z]{5,10})$";
-            var regex = new Regex(pattern);
-            var match = regex.Match(value);
+            this.FacultyNumber = facultyNumber;
+        }
 
-            if (match.Success)
+        public string FacultyNumber
+        {
+            get
             {
-                isValid = true;
+                return this.facultyNumber;
             }
 
-            if (isValid == false)
+            private set
             {
-                throw new ArgumentException("Invalid faculty number!");
-            }
+                var isValid = false;
+                var pattern = @"^([0-9[a-zA-Z]{5,10})$";
+                var regex = new Regex(pattern);
+                var match = regex.Match(value);
 
-            this.facultyNumber = value;
+                if (match.Success)
+                {
+                    isValid = true;
+                }
+
+                if (isValid == false)
+                {
+                    throw new ArgumentException("Invalid faculty number!");
+                }
+
+                this.facultyNumber = value;
+            }
+        }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+
+            sb.AppendLine($"First Name: {this.FirstName}");
+            sb.AppendLine($"Last Name: {this.LastName}");
+            sb.AppendLine($"Faculty number: {this.FacultyNumber}");
+
+            return sb.ToString();
         }
     }
-
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-
-        sb.AppendLine($"First Name: {this.FirstName}");
-        sb.AppendLine($"Last Name: {this.LastName}");
-        sb.AppendLine($"Faculty number: {this.FacultyNumber}");
-
-        return sb.ToString();
-    }
 }
-

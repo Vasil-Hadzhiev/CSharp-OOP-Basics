@@ -1,10 +1,9 @@
-﻿using System;
-
-public class Animal
+﻿namespace _01.SingleInheritance
 {
-    public void Eat()
+    public class Animal
     {
-
+        public void Eat()
+        {
+        }
     }
 }
-

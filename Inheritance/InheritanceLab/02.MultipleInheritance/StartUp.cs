@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-public class StartUp
+﻿namespace _02.MultipleInheritance
 {
-    public static void Main()
+    public class StartUp
     {
-        Puppy puppy = new Puppy();
+        public static void Main()
+        {
+            Puppy puppy = new Puppy();
 
-        puppy.Eat();
-        puppy.Bark();
-        puppy.Weep();
+            puppy.Eat();
+            puppy.Bark();
+            puppy.Weep();
+        }
     }
 }
-
