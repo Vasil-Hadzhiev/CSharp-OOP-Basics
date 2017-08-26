@@ -49,7 +49,8 @@
         {
             var pizza = new Pizza(name, numberOfToppings);
 
-            var doughInfo = Console.ReadLine().Split();
+            var doughInfo = Console.ReadLine()
+                .Split();
 
             var flourType = doughInfo[1];
             var bakingTechnique = doughInfo[2];
