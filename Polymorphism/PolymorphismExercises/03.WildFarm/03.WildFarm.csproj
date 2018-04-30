@@ -42,18 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Animal.cs" />
-    <Compile Include="Cat.cs" />
-    <Compile Include="Felime.cs" />
-    <Compile Include="Food.cs" />
-    <Compile Include="Mammal.cs" />
-    <Compile Include="Meat.cs" />
-    <Compile Include="Mouse.cs" />
+    <Compile Include="Models\Animals\Animal.cs" />
+    <Compile Include="Models\Animals\Cat.cs" />
+    <Compile Include="Models\Animals\Felime.cs" />
+    <Compile Include="Models\Foods\Food.cs" />
+    <Compile Include="Models\Animals\Mammal.cs" />
+    <Compile Include="Models\Foods\Meat.cs" />
+    <Compile Include="Models\Animals\Mouse.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tiger.cs" />
-    <Compile Include="Vegetable.cs" />
-    <Compile Include="Zebra.cs" />
+    <Compile Include="Models\Animals\Tiger.cs" />
+    <Compile Include="Models\Foods\Vegetable.cs" />
+    <Compile Include="Models\Animals\Zebra.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
