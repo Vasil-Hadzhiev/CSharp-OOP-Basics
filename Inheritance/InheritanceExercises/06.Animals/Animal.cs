@@ -79,7 +79,7 @@
         {
             var sb = new StringBuilder();
 
-            sb.AppendLine($"{this.GetType()}");
+            sb.AppendLine($"{this.GetType().Name}");
             sb.AppendLine($"{this.Name} {this.Age} {this.Gender}");
             sb.Append($"{this.ProduceSound()}");
 
