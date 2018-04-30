@@ -42,12 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InvalidArtistNameException.cs" />
-    <Compile Include="InvalidSongException.cs" />
-    <Compile Include="InvalidSongLength.cs" />
-    <Compile Include="InvalidSongMinutesException.cs" />
-    <Compile Include="InvalidSongNameException.cs" />
-    <Compile Include="InvalidSongSecondsException.cs" />
+    <Compile Include="Exceptions\InvalidArtistNameException.cs" />
+    <Compile Include="Exceptions\InvalidSongException.cs" />
+    <Compile Include="Exceptions\InvalidSongLength.cs" />
+    <Compile Include="Exceptions\InvalidSongMinutesException.cs" />
+    <Compile Include="Exceptions\InvalidSongNameException.cs" />
+    <Compile Include="Exceptions\InvalidSongSecondsException.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Song.cs" />
